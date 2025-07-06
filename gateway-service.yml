@@ -1,7 +1,4 @@
 spring:
-  main:
-    web-application-type: reactive
-
   cloud:
     gateway:
       server:
@@ -15,3 +12,5 @@ spring:
               uri: lb://pelicula-service
               predicates:
                 - Path=/api/peliculas/**
+              filters:
+                - StripPrefix=1
