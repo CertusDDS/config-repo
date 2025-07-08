@@ -17,3 +17,10 @@ spring:
                 - Path=/api/peliculas/**
               filters:
                 - StripPrefix=1
+    
+            - id: categoria-service
+              uri: lb://categoria-service
+              predicates:
+                - Path=/api/categorias/**
+              filters:
+                - StripPrefix=1
