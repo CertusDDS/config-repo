@@ -4,7 +4,7 @@ spring:
       on-profile: default
 
   application:
-    name: pelicula-service
+    name: categoria-service
 
   datasource:
     url: jdbc:mysql://localhost:3306/beemovie_db
