@@ -1,26 +1,26 @@
 spring:
   main:
-    web-application-type: reactive  #  ¡MUY IMPORTANTE!
+    web-application-type: reactive  # ¡MUY IMPORTANTE!
 
   cloud:
     gateway:
-      server:
-        webflux:
-          discovery:
-            locator:
-              enabled: true
-              lower-case-service-id: true
-          routes:
-            - id: pelicula-service
-              uri: lb://pelicula-service
-              predicates:
-                - Path=/api/peliculas/**
-              filters:
-                - StripPrefix=1
-    
-            - id: categoria-service
-              uri: lb://categoria-service
-              predicates:
-                - Path=/api/categorias/**
-              filters:
-                - StripPrefix=1
+      routes:
+        - id: pelicula-service
+          uri: lb://pelicula-service
+          predicates:
+            - Path=/api/peliculas/**
+          filters:
+            - StripPrefix=1
+
+        - id: categoria-service
+          uri: lb://categoria-service
+          predicates:
+            - Path=/api/categorias/**
+          filters:
+            - StripPrefix=1
+
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
