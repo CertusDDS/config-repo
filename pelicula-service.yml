@@ -7,7 +7,7 @@ spring:
     name: pelicula-service
 
   datasource:
-    url: jdbc:mysql://localhost:3306/beemovie_db
+    url: jdbc:mysql://localhost:3306/pelicula_db
     username: root
     password: "0246"
     driver-class-name: com.mysql.cj.jdbc.Driver
