@@ -1,14 +1,9 @@
 spring:
   main:
-    web-application-type: reactive
+    web-application-type: reactive  # ¡MUY IMPORTANTE!
 
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-
       routes:
         - id: pelicula-service
           uri: lb://pelicula-service
@@ -24,3 +19,7 @@ spring:
           filters:
             - StripPrefix=1
 
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
