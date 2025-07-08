@@ -1,6 +1,6 @@
 spring:
   main:
-    web-application-type: reactive  # 👈 ¡MUY IMPORTANTE!
+    web-application-type: reactive  #  ¡MUY IMPORTANTE!
 
   cloud:
     gateway:
